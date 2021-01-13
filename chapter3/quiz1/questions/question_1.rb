@@ -3,16 +3,16 @@
 # `four = 2.+()`, the calculation to the right of the `=` should
 # evaluate to 4. So it would become `four = 2.+(2)`.
 
-# five = 2.+()
+puts five = 2.+(3)
 
-# seven = 14./()
+puts seven = 14./(2)
 
-# two = 2.*()./()
+puts two = 2.*(2)./(2)
 
-# three_point_zero = 6.to_f./()
+puts three_point_zero = 6.to_f./(2.0)
 
-# two_is_integer = 4.to_f./().to_i.integer?
+puts two_is_integer = 4.to_f./(2).to_i.integer?
 
-# four = 12.%()
+puts four = 12.%(8)
 
-# zero = 12.%()
+puts zero = 12.%(2)
