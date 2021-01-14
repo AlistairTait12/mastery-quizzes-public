@@ -7,3 +7,25 @@
 #     number is the result of `0 + 1`.
 # * `puts`es these numbers, one per line.
 
+a = 0
+b = 1
+counter = 1
+
+while counter <= 20 / 2
+  puts a
+  puts b
+  a += b
+  b += a
+  counter += 1
+end
+
+# ALTERNATIVE ANSWER, USING AN ARRAY
+# sequence = [0, 1]
+
+# i = 1
+# while i < 19
+#   sequence.push(sequence[i - 1] + sequence[i])
+#   i += 1
+# end
+
+# puts sequence

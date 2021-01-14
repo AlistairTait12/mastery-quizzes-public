@@ -23,7 +23,7 @@ describe "Q3. Fibonacci sequence" do
                     "4181"].join("\n") }
 
   it "`puts`es first 20 Fibonacci numbers" do
-    expect { load "questions/question_3.rb" }
+    expect { load "../questions/question_3.rb" }
       .to output(/#{expected}$/).to_stdout
   end
 

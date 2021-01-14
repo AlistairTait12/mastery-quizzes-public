@@ -23,7 +23,7 @@ describe "Q1. FizzBuzz to 20" do
                     "Buzz"].join("\n") }
 
   it "`puts`es numbers 1 - 20, except Fizz if divisible by 3, Buzz if divisible by 5, FizzBuzz if divisible by 3 and 5" do
-    expect { load "questions/question_1.rb" }
+    expect { load "../questions/question_1.rb" }
       .to output(/#{expected}$/).to_stdout
   end
 
