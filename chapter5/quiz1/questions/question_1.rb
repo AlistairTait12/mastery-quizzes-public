@@ -14,3 +14,12 @@
 #   $ ruby question_1.rb
 #   It is certain
 
+predictions = [
+  'It is certain',
+  'It is decidedly so',
+  'Ask again later',
+  'Outlook not so good',
+  'Very doubtful'
+]
+
+puts predictions[rand(5)]
