@@ -11,11 +11,11 @@ a = 0
 b = 1
 counter = 1
 
-while counter <= 20 / 2
-  puts a
-  puts b
-  a += b
-  b += a
+while counter <= 10
+  puts a # display a
+  puts b # display b
+  a += b # update a to a plus b
+  b += a 
   counter += 1
 end
 
