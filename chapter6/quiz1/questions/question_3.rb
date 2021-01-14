@@ -26,3 +26,25 @@
 # * Note: To pass the tests, you'll need to `puts` exactly what's
 #   expected. Watch out for stray punctuation, capital letters, etc.
 
+while true
+  answer = gets.chomp.downcase
+  if answer === 'north'
+    puts "You are in a scary cave."
+    cave = true
+    while cave === true
+      answer = gets.chomp.downcase
+      if answer === 'north'
+        puts "You walk into sunlight."
+        free = true
+        cave = false
+        break
+      elsif answer === 'south'
+        puts "You are in a scary passage."
+        cave = false
+      end
+    end
+    if free === true
+      break
+    end
+  end
+end
