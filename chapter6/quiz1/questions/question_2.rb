@@ -20,3 +20,33 @@
 # * Note: You can assume the players will only ever input `rock`,
 #   `paper` or `scissors`.
 
+outcomes = ["It's a draw", "Player 1 wins", "Player 2 wins"]
+
+puts "Player 1's move"
+p1_move = gets.chomp.downcase
+puts "Player 2's move"
+p2_move = gets.chomp.downcase
+
+if p1_move === p2_move
+  puts outcomes[0]
+else
+  if p1_move === 'rock'
+    if p2_move === 'paper'
+      puts outcomes[2]
+    elsif p2_move === 'scissors'
+      puts outcomes[1]
+    end
+  elsif p1_move === 'paper'
+    if p2_move === 'scissors'
+      puts outcomes[2]
+    elsif p2_move === 'rock'
+      puts outcomes[1]
+    end
+  elsif p1_move === 'scissors'
+    if p2_move === 'rock'
+      puts outcomes[2]
+    elsif p2_move === 'paper'
+      puts outcomes[1]
+    end
+  end
+end
