@@ -62,5 +62,39 @@
 #   You survived!
 #   ```
 
-river = "-----,--C--,CC-CC,CC-CC"
+# Beginning state of the game:
 
+pos = 2
+part = 0
+
+while true
+  river = "-----,--C--,CC-CC,CC-CC".split(",")
+  # Check if player in same pos as croc
+  if river[part][pos] === "C"
+    puts "You were eaten."
+    break
+  end
+  
+  # Set player pos for this turn
+  river[part][pos] = "P"
+
+  # Display player pos
+  puts river
+  part += 1
+
+  # Get move from player and change pos
+  puts "Type left, right or neither"
+  move = gets.chomp
+  if move === 'left'
+    pos -= 1
+  elsif move === 'right'
+    pos += 1
+  end
+
+  # Win condition
+  if part === 4
+    puts "You survived!"
+    break
+  end
+
+end
