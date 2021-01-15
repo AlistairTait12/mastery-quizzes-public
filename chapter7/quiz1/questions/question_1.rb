@@ -19,3 +19,15 @@
 # * Note: You can assume the user will only enter integers separated
 #   by commas with no spaces.
 
+# Get numbers from user
+input = gets.chomp
+
+# An array which is the result of splitting the user input (still strings though!)
+numbers = input.split(",")
+
+numbers.each do |x|
+  x.to_i.times do
+    print "-"
+  end
+  puts
+end
