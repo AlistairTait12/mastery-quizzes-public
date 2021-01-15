@@ -126,7 +126,7 @@ describe "Q4. Big adventure" do
     allow_any_instance_of(Object)
       .to receive(:gets).and_return(*user_input)
 
-    expect { load "questions/question_4.rb" }
+    expect { load "../questions/question_4.rb" }
       .to output(/#{expected_output}/m).to_stdout
   end
 end

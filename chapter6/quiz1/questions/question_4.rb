@@ -37,3 +37,46 @@
 # * Note: To pass the tests, you'll need to `puts` exactly what's
 #   expected. Watch out for stray punctuation, capital letters, etc.
 
+# Starting room
+room = 'hall'
+
+while true
+
+  # Player is in the Hall
+  while room === 'hall'
+    command = gets.chomp.downcase
+    if command === 'north' # Program only responds to these commands, otherwise nothing is `puts`ed
+      room = 'study'
+    elsif command === 'quit'
+      room = 'exit'
+    elsif command === 'look'
+      puts "You are standing in a hall with a marble floor. You see a door."
+    end
+  end
+  
+  # Player is in the Study
+  while room === 'study'
+    command = gets.chomp.downcase
+    if command === 'south'
+      room = 'hall'
+    elsif command === 'quit'
+      room = 'exit'
+    elsif command === 'look'
+      puts "You are in a warm and cosy study. You see a safe. You see a desk."
+    elsif command === 'look at desk'
+      puts "You see a piece of paper that reads, The combination is 2451."
+    elsif command === 'enter combination 2451'
+      puts "You see some diamonds in the safe, pick them up and make your escape"
+      room = 'won'
+    end
+  end
+
+  # Exit sequence
+  if room === 'exit'
+    puts "Bye!"
+    break
+  elsif room === 'won'
+    break
+  end
+
+end
