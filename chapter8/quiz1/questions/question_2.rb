@@ -30,3 +30,14 @@ people = [
   { "name" => "Will", "sport" => "cycling", "fruit" => "blackberry" }
 ]
 
+puts "Enter what category to search"
+category = gets.chomp.downcase
+
+puts "Enter what value to search for"
+value = gets.chomp.downcase
+
+people.each do |person|
+  if person[category] === value
+    puts person['name']
+  end
+end
