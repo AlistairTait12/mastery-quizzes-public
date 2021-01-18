@@ -63,12 +63,12 @@ def move
   choice = nil
   until choice === "hit" || choice === "stick"
     puts "hit or stick"
-    choice = gets.chomp.downcase
+    choice = gets.chomp
   end
   choice
 end
 
-def score(hand)
+def score hand
   # Total score for this hand
   sum = 0
 
