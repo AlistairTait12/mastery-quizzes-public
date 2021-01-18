@@ -1,4 +1,4 @@
-require_relative "../questions/question_1"
+require_relative "/questions/question_1.rb"
 require "mastery_answer_code_quality"
 
 describe "Q1. Blackjack" do
