@@ -36,3 +36,26 @@ people = [
   { "name" => "Will", "sport" => "cycling", "fruit" => "blackberry" }
 ]
 
+sort_by_favorite = Hash.new
+
+# Request user input
+puts "Enter a category to group people by"
+category = gets.chomp.downcase
+
+# Iterate through the 'people' hash and place names into correct groups
+people.each do |person|
+  if sort_by_favorite.key?(person[category]) === false
+    sort_by_favorite[person[category]] = []
+  end
+
+  sort_by_favorite[person[category]].push(person['name'])
+
+end
+
+# Display groups into the console
+sort_by_favorite.each do |k, v|
+  puts k
+  v.each do |v|
+    puts v
+  end
+end
