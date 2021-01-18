@@ -59,3 +59,68 @@ def random_card
   cards[rand(13)]
 end
 
+def move
+  choice = nil
+  until choice === "hit" || choice === "stick"
+    puts "hit or stick"
+    choice = gets.chomp.downcase
+  end
+  choice
+end
+
+def score(hand)
+  # Total score for this hand
+  sum = 0
+
+  # Define the values of each 'card'
+  scores = {
+    "two" => 2, 
+    "three" => 3,
+    "four" => 4,
+    "five" => 5,
+    "six" => 6,
+    "seven" => 7,
+    "eight" => 8, 
+    "nine" => 9, 
+    "ten" => 10,
+    "jack" => 10, 
+    "queen" => 10, 
+    "king" => 10, 
+    "ace" => 11
+  }
+
+  # Find the value of EACH card, one at a time and add that score to the total
+  hand.each do |card|
+    sum += scores[card].to_i
+  end
+
+  # Final score of this hand
+  sum
+end
+
+def run_game
+  hand = []
+  player_score = 0
+
+  while true
+    # Request input:
+    choice = move
+    if choice === "hit" # Continue adding cards to the hand
+      hand.push(random_card)
+      player_score = score(hand)
+    elsif choice === "stick" # Quit the game and tell player their outcome
+      if player_score <= 21
+        puts "You scored: #{player_score}"
+      elsif player_score > 21
+        puts "You busted with: #{player_score}"
+      end
+      break
+    end
+    
+    # Keeping track of the score
+    puts "Score so far: #{player_score}" 
+
+  end
+end
+
+run_game
