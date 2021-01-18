@@ -17,4 +17,31 @@
 #   contains letters and blanks.  You can assume the word will be in
 #   uppercase.
 
+# Hash containing points values and corresponding letters
+points = {
+  0 => [' '],
+  1 => ['E', 'A', 'I', 'O', 'N', 'R', 'T', 'L', 'S', 'U'],
+  2 => ['D', 'G'],
+  3 => ['B', 'C', 'M', 'P'],
+  4 => ['F', 'H', 'V', 'W', 'Y'],
+  5 => ['K'],
+  8 => ['J', 'X'],
+  10 => ['Q', 'Z']
+}
 
+score = 0
+
+# Get user input
+puts "Please enter the word you wish to calculate:"
+word = gets.chomp.upcase
+
+# Process the word to determine value
+word.chars.each do |letter|
+  points.each do |k, v|
+    if v.include?(letter)
+      score += k.to_i
+    end
+  end
+end
+
+puts score
