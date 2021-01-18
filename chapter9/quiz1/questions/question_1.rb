@@ -122,5 +122,3 @@ def run_game
 
   end
 end
-
-run_game
